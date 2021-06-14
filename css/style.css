@@ -1,0 +1,68 @@
+@font-face {
+  src: url("../fonts/sf-ui-display-cufonfonts/sf-ui-display-medium-58646be638f96.otf");
+  font-family: "SF UI Display";
+  font-weight: normal;
+  font-style: normal; }
+
+:root {
+  --text-color: #585858;
+  --primary-color: #fd665e; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+body {
+  font-family: "SF UI Display";
+  line-height: 1.5;
+  color: var(--text-color); }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+ul {
+  list-style: none; }
+
+img {
+  display: block; }
+
+button {
+  display: inline-block;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer; }
+
+.flex {
+  display: flex; }
+
+.justify-between {
+  justify-content: space-between; }
+
+.align-center {
+  align-items: center; }
+
+.header {
+  gap: 60px;
+  padding: 33px 50px; }
+
+.navbar {
+  width: 100%;
+  font-size: 14px; }
+  .navbar__links {
+    gap: 50px; }
+  .navbar__buttons {
+    gap: 45px; }
+  .navbar__search {
+    display: block; }
+  .navbar__signup {
+    padding: 15px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px; }

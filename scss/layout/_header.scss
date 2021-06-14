@@ -1,0 +1,28 @@
+.header {
+  gap: 60px;
+  padding: 33px 50px;
+}
+
+.navbar {
+  width: 100%;
+  font-size: 14px;
+
+  &__links {
+    gap: 50px;
+  }
+
+  &__buttons {
+    gap: 45px;
+  }
+
+  &__search {
+    display: block;
+  }
+
+  &__signup {
+    padding: 15px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+  }
+}

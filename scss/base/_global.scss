@@ -8,8 +8,7 @@
 }
 
 body {
-  font-family: "SF UI Display";
-  line-height: 1.5;
+  font-family: "SF UI Display", sans-serif;
   color: var(--text-color);
 }
 
@@ -27,10 +26,29 @@ img {
 }
 
 button {
-  display: inline-block;
   background: none;
   border: none;
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "New York Extra Large", sans-serif;
+}
+
+h1 {
+  font-size: 112px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }

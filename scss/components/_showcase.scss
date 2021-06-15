@@ -1,0 +1,19 @@
+.showcase {
+  padding: 49px 0;
+
+  &__header {
+    margin-bottom: 56px;
+  }
+
+  &__info {
+    gap: 55px;
+  }
+
+  &__text {
+    margin-bottom: 48px;
+  }
+
+  &__btn {
+    padding: 8px 32px;
+  }
+}

@@ -1,0 +1,45 @@
+.rooms {
+  padding: 64px;
+
+  &__container {
+    overflow-x: hidden;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__heading {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__buttons {
+    margin-left: auto;
+    align-self: flex-end;
+  }
+}
+
+.slider {
+  &__container {
+    gap: 40px;
+  }
+
+  &__button {
+    padding: 14px;
+    font-size: 20px;
+    border-radius: 4px;
+
+    &:hover,
+    &:active {
+      background: rgba(#000, 0.03);
+      color: #fd665e;
+    }
+  }
+
+  &__prev-btn {
+    margin-right: 8px;
+  }
+}

@@ -40,12 +40,17 @@ h4,
 h5,
 h6 {
   font-family: "New York Extra Large", sans-serif;
+  letter-spacing: -0.04em;
 }
 
 h1 {
   font-size: 112px;
   line-height: 1;
-  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.24;
 }
 
 p {

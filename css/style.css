@@ -51,12 +51,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "New York Extra Large", sans-serif; }
+  font-family: "New York Extra Large", sans-serif;
+  letter-spacing: -0.04em; }
 
 h1 {
   font-size: 112px;
-  line-height: 1;
-  letter-spacing: -0.04em; }
+  line-height: 1; }
+
+h2 {
+  font-size: 48px;
+  line-height: 1.24; }
 
 p {
   line-height: 1.6;
@@ -68,7 +72,15 @@ p {
 .justify-between {
   justify-content: space-between; }
 
+.justify-end {
+  justify-content: flex-end; }
+
 .align-center {
+  align-items: center; }
+
+.center {
+  display: flex;
+  justify-content: center;
   align-items: center; }
 
 .text-primary {
@@ -120,3 +132,32 @@ p {
     margin-bottom: 48px; }
   .showcase__btn {
     padding: 8px 32px; }
+
+.rooms {
+  padding: 64px; }
+  .rooms__container {
+    overflow-x: hidden; }
+  .rooms__header {
+    display: flex;
+    margin-bottom: 40px; }
+  .rooms__heading {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+  .rooms__buttons {
+    margin-left: auto;
+    align-self: flex-end; }
+
+.slider__container {
+  gap: 40px; }
+
+.slider__button {
+  padding: 14px;
+  font-size: 20px;
+  border-radius: 4px; }
+  .slider__button:hover, .slider__button:active {
+    background: rgba(0, 0, 0, 0.03);
+    color: #fd665e; }
+
+.slider__prev-btn {
+  margin-right: 8px; }

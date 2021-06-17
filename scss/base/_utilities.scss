@@ -10,8 +10,12 @@
   justify-content: flex-end;
 }
 
-.align-center {
+.items-center {
   align-items: center;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .center {
@@ -33,6 +37,7 @@
   font-weight: bold;
   line-height: 2.86;
   letter-spacing: 0.01em;
+  padding: 8px 32px;
 
   &-primary {
     --btn-bg-color: var(--primary-color);
@@ -42,4 +47,9 @@
 .container {
   max-width: 1117px;
   margin: 0 auto;
+}
+
+.py-64 {
+  padding-top: 64px;
+  padding-bottom: 64px;
 }

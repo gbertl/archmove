@@ -75,8 +75,11 @@ p {
 .justify-end {
   justify-content: flex-end; }
 
-.align-center {
+.items-center {
   align-items: center; }
+
+.self-start {
+  align-self: flex-start; }
 
 .center {
   display: flex;
@@ -94,13 +97,18 @@ p {
   font-size: 14px;
   font-weight: bold;
   line-height: 2.86;
-  letter-spacing: 0.01em; }
+  letter-spacing: 0.01em;
+  padding: 8px 32px; }
   .btn-primary {
     --btn-bg-color: var(--primary-color); }
 
 .container {
   max-width: 1117px;
   margin: 0 auto; }
+
+.py-64 {
+  padding-top: 64px;
+  padding-bottom: 64px; }
 
 .header {
   gap: 60px;
@@ -130,23 +138,22 @@ p {
     gap: 55px; }
   .showcase__text {
     margin-bottom: 48px; }
-  .showcase__btn {
-    padding: 8px 32px; }
 
-.rooms {
-  padding: 64px; }
-  .rooms__container {
-    overflow-x: hidden; }
-  .rooms__header {
-    display: flex;
-    margin-bottom: 40px; }
-  .rooms__heading {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%); }
-  .rooms__buttons {
-    margin-left: auto;
-    align-self: flex-end; }
+.rooms__container {
+  overflow-x: hidden; }
+
+.rooms__header {
+  display: flex;
+  margin-bottom: 40px; }
+
+.rooms__heading {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.rooms__buttons {
+  margin-left: auto;
+  align-self: flex-end; }
 
 .slider__container {
   gap: 40px; }
@@ -161,3 +168,26 @@ p {
 
 .slider__prev-btn {
   margin-right: 8px; }
+
+.info__heading {
+  margin-bottom: 40px; }
+
+.info__body {
+  gap: 155px; }
+
+.info-details-wrapper {
+  flex-direction: column; }
+
+.info-details {
+  margin-bottom: 72px; }
+  .info-details > * + * {
+    margin-top: 48px; }
+  .info-details__container {
+    gap: 38px; }
+  .info-details__heading {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold; }
+  .info-details__cta {
+    margin-left: auto;
+    margin-right: auto; }

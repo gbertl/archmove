@@ -25,18 +25,6 @@
     gap: 40px;
   }
 
-  &__button {
-    padding: 14px;
-    font-size: 20px;
-    border-radius: 4px;
-
-    &:hover,
-    &:active {
-      background: rgba(#000, 0.03);
-      color: #fd665e;
-    }
-  }
-
   &__prev-btn {
     margin-right: 8px;
   }

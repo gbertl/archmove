@@ -1,4 +1,10 @@
 @font-face {
+  src: url("../fonts/sf-ui-display/sf-ui-display-light-58646b33e0551.otf");
+  font-family: "SF UI Display";
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
   src: url("../fonts/sf-ui-display/SF-UI-Display-Regular.otf");
   font-family: "SF UI Display";
   font-weight: normal;
@@ -89,6 +95,9 @@ p {
 .text-primary {
   color: var(--primary-color); }
 
+.text-bold {
+  font-weight: bold; }
+
 .btn {
   display: inline-block;
   background-color: var(--btn-bg-color);
@@ -102,6 +111,15 @@ p {
   .btn-primary {
     --btn-bg-color: var(--primary-color); }
 
+.carousel-btn {
+  display: inline-block;
+  padding: 14px;
+  font-size: 20px;
+  border-radius: 4px; }
+  .carousel-btn:hover, .carousel-btn:active {
+    background: rgba(0, 0, 0, 0.03);
+    color: #fd665e; }
+
 .container {
   max-width: 1117px;
   margin: 0 auto; }
@@ -109,6 +127,9 @@ p {
 .py-64 {
   padding-top: 64px;
   padding-bottom: 64px; }
+
+.bg-gray {
+  background: linear-gradient(180deg, #f9f9f9 22.12%, rgba(249, 249, 249, 0) 100%); }
 
 .header {
   gap: 60px;
@@ -158,14 +179,6 @@ p {
 .slider__container {
   gap: 40px; }
 
-.slider__button {
-  padding: 14px;
-  font-size: 20px;
-  border-radius: 4px; }
-  .slider__button:hover, .slider__button:active {
-    background: rgba(0, 0, 0, 0.03);
-    color: #fd665e; }
-
 .slider__prev-btn {
   margin-right: 8px; }
 
@@ -191,3 +204,39 @@ p {
   .info-details__cta {
     margin-left: auto;
     margin-right: auto; }
+
+.testimonials__container {
+  overflow-x: hidden;
+  position: relative; }
+
+.testimonials__heading {
+  margin-bottom: 40px; }
+
+.testimonials__carousel-container {
+  gap: 100px;
+  width: 874px;
+  margin-left: auto; }
+
+.testimonials__text {
+  gap: 52px;
+  width: 100%;
+  flex-shrink: 0;
+  padding-bottom: 14px; }
+
+.testimonials__quotes {
+  align-self: flex-start; }
+
+.testimonials__paragraph {
+  margin-bottom: 59px;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.01em; }
+
+.testimonials__buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+.testimonials__prev-btn {
+  margin-right: 8px; }

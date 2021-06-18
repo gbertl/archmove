@@ -28,6 +28,10 @@
   color: var(--primary-color);
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .btn {
   display: inline-block;
   background-color: var(--btn-bg-color);
@@ -44,6 +48,19 @@
   }
 }
 
+.carousel-btn {
+  display: inline-block;
+  padding: 14px;
+  font-size: 20px;
+  border-radius: 4px;
+
+  &:hover,
+  &:active {
+    background: rgba(#000, 0.03);
+    color: #fd665e;
+  }
+}
+
 .container {
   max-width: 1117px;
   margin: 0 auto;
@@ -52,4 +69,12 @@
 .py-64 {
   padding-top: 64px;
   padding-bottom: 64px;
+}
+
+.bg-gray {
+  background: linear-gradient(
+    180deg,
+    #f9f9f9 22.12%,
+    rgba(249, 249, 249, 0) 100%
+  );
 }

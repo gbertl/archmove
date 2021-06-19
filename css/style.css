@@ -240,3 +240,16 @@ p {
 
 .testimonials__prev-btn {
   margin-right: 8px; }
+
+.cta__container {
+  gap: 123px; }
+
+.cta__heading {
+  margin-bottom: 64px; }
+
+.partners__heading {
+  margin-bottom: 56px; }
+
+.partners__brands {
+  justify-content: space-between;
+  align-items: center; }

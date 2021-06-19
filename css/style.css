@@ -25,6 +25,7 @@
 :root {
   --text-color: #000;
   --gray-color: #585858;
+  --gray-hover-color: #8b8b8b;
   --white-color: #fff;
   --primary-color: #fd665e;
   --primary-hover-color: #fc362c; }
@@ -247,6 +248,8 @@ input {
     line-height: 3.33;
     letter-spacing: 0.01em;
     color: var(--gray-color); }
+    .footer-nav__link:hover {
+      color: var(--gray-hover-color); }
 
 .showcase {
   padding: 49px 0; }

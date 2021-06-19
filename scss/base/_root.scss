@@ -1,6 +1,7 @@
 :root {
   --text-color: #000;
-  --gray-color: #585858;
+  --gray-color: #{$gray-color};
+  --gray-hover-color: #{$gray-hover-color};
   --white-color: #fff;
   --primary-color: #{$primary-color};
   --primary-hover-color: #{$primary-hover-color};

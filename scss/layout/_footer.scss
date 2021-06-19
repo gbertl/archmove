@@ -12,5 +12,9 @@
     line-height: 3.33;
     letter-spacing: 0.01em;
     color: var(--gray-color);
+
+    &:hover {
+      color: var(--gray-hover-color);
+    }
   }
 }

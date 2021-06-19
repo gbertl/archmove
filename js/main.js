@@ -50,3 +50,12 @@ carousel({
   container: document.querySelector(".testimonials__carousel-container"),
   items: document.querySelectorAll(".testimonials__text"),
 });
+
+document.querySelector(".navbar-search__btn").addEventListener("click", () => {
+  document
+    .querySelector(".navbar-search__input-wrapper")
+    .classList.toggle("navbar-search__input-wrapper--open");
+  setTimeout(() => {
+    document.querySelector(".navbar-search__input").focus();
+  }, 400);
+});

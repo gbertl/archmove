@@ -24,12 +24,26 @@
           <li><a href="#" class="navbar__link">How it Works</a></li>
         </ul>
         <ul class="navbar__buttons flex items-center">
-          <li>
-            <button class="navbar__search">
-              <img src="img/icons/search.svg" alt="" />
+          <li class="flex items-center navbar-search">
+            <div class="navbar-search__input-wrapper">
+              <input
+                type="text"
+                class="navbar-search__input"
+                placeholder="Type your query"
+                required
+              />
+              <label class="navbar-search__label" for=""> </label>
+            </div>
+
+            <button class="navbar-search__btn carousel-btn">
+              <span
+                class="iconify"
+                data-icon="ant-design:search-outlined"
+                data-inline="false"
+              ></span>
             </button>
           </li>
-          <li><a href="#">Sign In</a></li>
+          <li><a href="#" class="navbar__link">Sign In</a></li>
           <li><button class="navbar__signup">Sign Up</button></li>
         </ul>
       </nav>

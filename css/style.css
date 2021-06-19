@@ -78,6 +78,13 @@ p {
   line-height: 1.6;
   letter-spacing: 0.01em; }
 
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background: none; }
+
 .flex {
   display: flex; }
 
@@ -122,7 +129,7 @@ p {
   padding: 14px;
   font-size: 20px;
   border-radius: 4px; }
-  .carousel-btn:hover, .carousel-btn:active {
+  .carousel-btn:hover {
     background: rgba(0, 0, 0, 0.03);
     color: #fd665e; }
 
@@ -136,6 +143,9 @@ p {
 
 .bg-gray {
   background: linear-gradient(180deg, #f9f9f9 22.12%, rgba(249, 249, 249, 0) 100%); }
+
+.hidden {
+  display: none !important; }
 
 .header {
   gap: 60px;
@@ -156,19 +166,58 @@ p {
       left: 0;
       width: 0;
       height: 1px;
-      background-color: red;
+      background-color: var(--primary-color);
       transition: 0.4s; }
     .navbar__link:hover::before {
       width: 100%; }
   .navbar__buttons {
     gap: 45px; }
-  .navbar__search {
-    display: block; }
   .navbar__signup {
     padding: 15px 24px;
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px; }
+
+.navbar-search {
+  gap: 15px; }
+  .navbar-search__btn {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 0;
+    color: #585858;
+    padding: 10px 15px;
+    border-radius: none; }
+  .navbar-search__input-wrapper {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: 0.4s; }
+  .navbar-search__input-wrapper--open {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0); }
+  .navbar-search__input-wrapper--open ~ .navbar-search__btn {
+    background: rgba(0, 0, 0, 0.03);
+    color: #fd665e; }
+  .navbar-search__input {
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.03); }
+    .navbar-search__input::placeholder {
+      font-family: "SF UI Display", sans-serif;
+      color: gray; }
+  .navbar-search__label::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: 0.4s; }
+  .navbar-search__input:focus + .navbar-search__label::before,
+  .navbar-search__input:valid + .navbar-search__label::before {
+    width: 100%; }
 
 .footer {
   padding: 83px 0;

@@ -54,8 +54,7 @@
   font-size: 20px;
   border-radius: 4px;
 
-  &:hover,
-  &:active {
+  &:hover {
     background: rgba(#000, 0.03);
     color: #fd665e;
   }
@@ -77,4 +76,8 @@
     #f9f9f9 22.12%,
     rgba(249, 249, 249, 0) 100%
   );
+}
+
+.hidden {
+  display: none !important;
 }

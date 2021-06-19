@@ -2,5 +2,6 @@
   --text-color: #000;
   --gray-color: #585858;
   --white-color: #fff;
-  --primary-color: #fd665e;
+  --primary-color: #{$primary-color};
+  --primary-hover-color: #{$primary-hover-color};
 }

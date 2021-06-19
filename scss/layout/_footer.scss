@@ -1,0 +1,16 @@
+.footer {
+  padding: 83px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.footer-nav {
+  gap: 48px;
+
+  &__link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 3.33;
+    letter-spacing: 0.01em;
+    color: var(--gray-color);
+  }
+}

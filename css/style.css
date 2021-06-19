@@ -13,6 +13,12 @@
 @font-face {
   src: url("../fonts/sf-ui-display/sf-ui-display-semibold-58646eddcae92.otf");
   font-family: "SF UI Display";
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  src: url("../fonts/sf-ui-display/sf-ui-display-bold-58646a511e3d9.otf");
+  font-family: "SF UI Display";
   font-weight: bold;
   font-style: normal; }
 
@@ -150,6 +156,19 @@ p {
     background-color: var(--primary-color);
     color: white;
     border-radius: 4px; }
+
+.footer {
+  padding: 83px 0;
+  border-top: 1px solid #f0f0f0; }
+
+.footer-nav {
+  gap: 48px; }
+  .footer-nav__link {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 3.33;
+    letter-spacing: 0.01em;
+    color: var(--gray-color); }
 
 .showcase {
   padding: 49px 0; }

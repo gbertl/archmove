@@ -1,9 +1,14 @@
-const carousel = ({prevBtn, nextBtn, container, items}) => {
+const carousel = ({prevBtn, nextBtn, container, items, interval}) => {
   let size = 0;
   let counter = 0;
   let gap = parseFloat(getComputedStyle(container).gap);
 
-  nextBtn.addEventListener("click", () => {
+  const apply = () => {
+    container.style.transition = "1s";
+    container.style.transform = `translateX(${-size}px)`;
+  };
+
+  const handleNextBtn = () => {
     if (counter + 1 === items.length) {
       size = 0;
       counter = 0;
@@ -12,11 +17,10 @@ const carousel = ({prevBtn, nextBtn, container, items}) => {
       counter++;
     }
 
-    container.style.transition = "0.4s";
-    container.style.transform = `translateX(${-size}px)`;
-  });
+    apply();
+  };
 
-  prevBtn.addEventListener("click", () => {
+  const handlePrevBtn = () => {
     if (counter === 0) {
       size = 0;
 
@@ -32,8 +36,26 @@ const carousel = ({prevBtn, nextBtn, container, items}) => {
       size = size - items[counter].clientWidth - gap;
     }
 
-    container.style.transition = "0.4s";
-    container.style.transform = `translateX(${-size}px)`;
+    apply();
+  };
+
+  let timer;
+
+  if (interval) timer = setInterval(handleNextBtn, interval);
+
+  const resetTimer = () => {
+    clearInterval(timer);
+    timer = setInterval(handleNextBtn, interval);
+  };
+
+  nextBtn.addEventListener("click", () => {
+    handleNextBtn();
+    if (interval) resetTimer();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    handlePrevBtn();
+    if (interval) resetTimer();
   });
 };
 
@@ -49,6 +71,7 @@ carousel({
   nextBtn: document.querySelector(".testimonials__next-btn"),
   container: document.querySelector(".testimonials__carousel-container"),
   items: document.querySelectorAll(".testimonials__text"),
+  interval: 5000,
 });
 
 document.querySelector(".navbar-search__btn").addEventListener("click", () => {

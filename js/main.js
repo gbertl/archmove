@@ -82,3 +82,11 @@ document.querySelector(".navbar-search__btn").addEventListener("click", () => {
     document.querySelector(".navbar-search__input").focus();
   }, 400);
 });
+
+document.body.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar-search")) {
+    document
+      .querySelector(".navbar-search__input-wrapper")
+      .classList.remove("navbar-search__input-wrapper--open");
+  }
+});

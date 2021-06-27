@@ -4,7 +4,7 @@ const carousel = ({prevBtn, nextBtn, container, items, interval}) => {
   let gap = parseFloat(getComputedStyle(container).gap);
 
   const apply = () => {
-    container.style.transition = "1s";
+    container.style.transition = "0.4s";
     container.style.transform = `translateX(${-size}px)`;
   };
 

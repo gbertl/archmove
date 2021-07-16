@@ -74,19 +74,24 @@ carousel({
   interval: 5000,
 });
 
-document.querySelector(".navbar-search__btn").addEventListener("click", () => {
+document.querySelector(".navbarSearch__btn").addEventListener("click", () => {
   document
-    .querySelector(".navbar-search__input-wrapper")
-    .classList.toggle("navbar-search__input-wrapper--open");
-  setTimeout(() => {
-    document.querySelector(".navbar-search__input").focus();
-  }, 400);
+    .querySelector(".navbarSearch__inputWrapper")
+    .classList.toggle("navbarSearch__inputWrapper--open");
+  document.querySelector(".navbarSearch__input").focus();
 });
 
 document.body.addEventListener("click", (e) => {
-  if (!e.target.closest(".navbar-search")) {
+  if (!e.target.closest(".navbarSearch")) {
     document
-      .querySelector(".navbar-search__input-wrapper")
-      .classList.remove("navbar-search__input-wrapper--open");
+      .querySelector(".navbarSearch__inputWrapper")
+      .classList.remove("navbarSearch__inputWrapper--open");
   }
+});
+
+const navtoggler = document.querySelector(".navbar-toggler");
+const navbar = document.querySelector(".nav");
+
+navtoggler.addEventListener("click", () => {
+  navbar.classList.toggle("nav--open");
 });

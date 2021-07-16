@@ -1,0 +1,19 @@
+.navbar {
+  gap: 30px;
+  padding: 33px 50px;
+  position: relative;
+  justify-content: space-between;
+
+  @include mq(small) {
+    flex-direction: column;
+  }
+
+  @include mq(large) {
+    flex-direction: row;
+    gap: 60px;
+  }
+}
+
+@import "navbar/nav";
+@import "navbar/navbarSearch";
+@import "navbar/navbar-toggler";

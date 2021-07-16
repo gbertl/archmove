@@ -1,0 +1,149 @@
+.nav {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  background-color: #eaeaea;
+  color: var(--gray-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+
+  &--open {
+    max-height: 100vh;
+  }
+
+  &__links-wrapper {
+    gap: 0;
+    flex-direction: column;
+    padding: 15px 15px 0;
+  }
+
+  &__buttons {
+    gap: 15px;
+    padding: 0 15px 15px;
+  }
+
+  &__links-wrapper li,
+  &__buttons li {
+    width: 100%;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 15px;
+    width: 100%;
+
+    &:hover {
+      color: var(--gray-hover-color);
+    }
+
+    &:hover::before {
+      width: 0;
+    }
+  }
+
+  &__signup {
+    padding: 15px 24px;
+    line-height: inherit;
+    width: 100%;
+
+    &:hover {
+      background-color: var(--primary-hover-color);
+    }
+
+    &:hover::before {
+      transform: scaleX(0);
+    }
+  }
+
+  &__signin {
+    border-radius: 4px;
+    padding: 15px;
+    width: 100%;
+    color: var(--gray-color);
+
+    &:hover {
+      color: var(--gray-color);
+      background-color: #e2e2e2;
+    }
+  }
+
+  @include mq(small) {
+    display: flex;
+    background: none;
+    position: relative;
+    overflow: visible;
+    max-height: none;
+    transition: none;
+
+    &__signup {
+      &:hover {
+        background-color: var(--primary-color);
+      }
+
+      &:hover::before {
+        transform: scaleX(1);
+      }
+    }
+
+    &__links-wrapper {
+      gap: 15px;
+      text-align: center;
+    }
+
+    &__links-wrapper,
+    &__buttons {
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+    }
+
+    &__link {
+      position: relative;
+      padding: 0;
+      width: auto;
+
+      &:hover {
+        color: var(--gray-color);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--primary-color);
+        transition: 0.4s;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  }
+
+  @include mq(large) {
+    padding: 0;
+    flex-direction: row;
+
+    &__links-wrapper {
+      gap: 50px;
+    }
+
+    &__links-wrapper li,
+    &__buttons li {
+      width: auto;
+    }
+
+    &__buttons {
+      gap: 45px;
+    }
+  }
+}

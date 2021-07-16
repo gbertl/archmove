@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link
       href="https://fonts.cdnfonts.com/css/new-york-extra-large?styles=70611"
@@ -13,28 +14,33 @@
     <title>Arch Move</title>
   </head>
   <body>
-    <header class="header flex items-center">
-      <a href="#"><img src="img/logo.svg" alt="" /></a>
-      <nav class="navbar flex justify-between">
-        <ul class="navbar__links-wrapper flex items-center">
-          <li><a href="#" class="navbar__link">Design Gallery</a></li>
-          <li><a href="#" class="navbar__link">List of Architech</a></li>
-          <li><a href="#" class="navbar__link">Articles</a></li>
-          <li><a href="#" class="navbar__link">How it Works</a></li>
+    <nav class="navbar flex items-center">
+      <a href="#" class="navbar__logo"><img src="img/logo.svg" alt="" /></a>
+      <button class="navbar-toggler">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <div class="nav justify-between">
+        <ul class="nav__links-wrapper flex items-center">
+          <li><a href="#" class="nav__link">Design Gallery</a></li>
+          <li><a href="#" class="nav__link">List of Architech</a></li>
+          <li><a href="#" class="nav__link">Articles</a></li>
+          <li><a href="#" class="nav__link">How it Works</a></li>
         </ul>
-        <ul class="navbar__buttons flex items-center">
-          <li class="flex items-center navbar-search">
-            <div class="navbar-search__input-wrapper">
+        <ul class="nav__buttons flex items-center">
+          <li class="flex items-center navbarSearch">
+            <div class="navbarSearch__inputWrapper">
               <input
                 type="text"
-                class="navbar-search__input"
+                class="navbarSearch__input"
                 placeholder="Type your query"
                 required
               />
-              <label class="navbar-search__label" for=""> </label>
+              <label class="navbarSearch__label" for=""> </label>
             </div>
 
-            <button class="navbar-search__btn carousel-btn">
+            <button class="navbarSearch__btn carousel-btn">
               <span
                 class="iconify"
                 data-icon="ant-design:search-outlined"
@@ -42,13 +48,15 @@
               ></span>
             </button>
           </li>
-          <li><a href="#" class="navbar__link">Sign In</a></li>
           <li>
-            <button class="btn btn-primary navbar__signup">Sign Up</button>
+            <button class="nav__signin">Sign In</button>
+          </li>
+          <li>
+            <button class="btn btn-primary nav__signup">Sign Up</button>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
     <section class="showcase">
       <div class="container">

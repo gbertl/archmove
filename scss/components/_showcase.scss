@@ -1,15 +1,33 @@
 .showcase {
-  padding: 49px 0;
+  padding: 40px 0;
+
+  @include mq(large) {
+    padding: 49px 0;
+  }
 
   &__header {
-    margin-bottom: 56px;
+    margin-bottom: 30px;
+
+    @include mq(large) {
+      margin-bottom: 56px;
+    }
   }
 
   &__info {
-    gap: 55px;
+    gap: 30px;
+    flex-direction: column;
+
+    @include mq(large) {
+      gap: 55px;
+      flex-direction: row;
+    }
   }
 
   &__text {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+
+    @include mq(large) {
+      margin-bottom: 48px;
+    }
   }
 }

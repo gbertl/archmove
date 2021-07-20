@@ -69,8 +69,11 @@ h6 {
   letter-spacing: -0.04em; }
 
 h1 {
-  font-size: 112px;
+  font-size: 67.2px;
   line-height: 1; }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 112px; } }
 
 h2 {
   font-size: 48px;
@@ -157,6 +160,7 @@ input {
 
 .container {
   max-width: 1117px;
+  width: 90%;
   margin: 0 auto; }
 
 .py-64 {
@@ -354,13 +358,27 @@ input {
       color: var(--gray-hover-color); }
 
 .showcase {
-  padding: 49px 0; }
+  padding: 40px 0; }
+  @media (min-width: 1024px) {
+    .showcase {
+      padding: 49px 0; } }
   .showcase__header {
-    margin-bottom: 56px; }
+    margin-bottom: 30px; }
+    @media (min-width: 1024px) {
+      .showcase__header {
+        margin-bottom: 56px; } }
   .showcase__info {
-    gap: 55px; }
+    gap: 30px;
+    flex-direction: column; }
+    @media (min-width: 1024px) {
+      .showcase__info {
+        gap: 55px;
+        flex-direction: row; } }
   .showcase__text {
-    margin-bottom: 48px; }
+    margin-bottom: 40px; }
+    @media (min-width: 1024px) {
+      .showcase__text {
+        margin-bottom: 48px; } }
 
 .rooms__container {
   overflow-x: hidden; }

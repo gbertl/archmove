@@ -44,8 +44,12 @@ h6 {
 }
 
 h1 {
-  font-size: 112px;
+  font-size: 67.2px;
   line-height: 1;
+
+  @include mq(large) {
+    font-size: 112px;
+  }
 }
 
 h2 {

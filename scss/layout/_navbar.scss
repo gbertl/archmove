@@ -1,6 +1,6 @@
 .navbar {
   gap: 30px;
-  padding: 33px 50px;
+  padding: 33px 30px;
   position: relative;
   justify-content: space-between;
 
@@ -9,6 +9,7 @@
   }
 
   @include mq(large) {
+    padding: 33px 50px;
     flex-direction: row;
     gap: 60px;
   }

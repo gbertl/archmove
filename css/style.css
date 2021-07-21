@@ -186,7 +186,7 @@ input {
 
 .navbar {
   gap: 30px;
-  padding: 33px 50px;
+  padding: 33px 30px;
   position: relative;
   justify-content: space-between; }
   @media (min-width: 640px) {
@@ -194,6 +194,7 @@ input {
       flex-direction: column; } }
   @media (min-width: 1024px) {
     .navbar {
+      padding: 33px 50px;
       flex-direction: row;
       gap: 60px; } }
 

@@ -4,19 +4,29 @@
   }
 
   &__header {
-    display: flex;
+    display: grid;
     margin-bottom: 40px;
+    grid-template-columns: 2fr 1fr;
+
+    @include mq(medium) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
   }
 
   &__heading {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    @include mq(medium) {
+      grid-column: 2;
+      justify-self: center;
+    }
   }
 
   &__buttons {
-    margin-left: auto;
+    justify-self: flex-end;
     align-self: flex-end;
+
+    @include mq(medium) {
+      grid-column: 3;
+    }
   }
 }
 

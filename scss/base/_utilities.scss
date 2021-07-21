@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -92,9 +96,14 @@
   margin: 0 auto;
 }
 
-.py-64 {
-  padding-top: 64px;
-  padding-bottom: 64px;
+.section-y-padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include mq(large) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
 .bg-gray {

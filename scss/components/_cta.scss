@@ -1,9 +1,19 @@
 .cta {
   &__container {
-    gap: 123px;
+    flex-direction: column;
+    gap: 50px;
+
+    @include mq(large) {
+      flex-direction: row;
+      gap: 123px;
+    }
   }
 
   &__heading {
-    margin-bottom: 64px;
+    margin-bottom: 34px;
+
+    @include mq(large) {
+      margin-bottom: 64px;
+    }
   }
 }

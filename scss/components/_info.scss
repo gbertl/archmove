@@ -4,7 +4,13 @@
   }
 
   &__body {
-    gap: 155px;
+    flex-direction: column;
+    gap: 60px;
+
+    @include mq(large) {
+      flex-direction: row;
+      gap: 155px;
+    }
   }
 }
 
@@ -13,11 +19,19 @@
 }
 
 .info-details {
-  margin-bottom: 72px;
+  margin-bottom: 40px;
+
+  @include mq(large) {
+    margin-bottom: 72px;
+  }
 
   // adds margin to children except first
   > * + * {
-    margin-top: 48px;
+    margin-top: 30px;
+
+    @include mq(large) {
+      margin-top: 48px;
+    }
   }
 
   &__container {

@@ -22,6 +22,7 @@ ul {
 }
 
 img {
+  max-width: 100%;
   display: block;
 }
 
@@ -53,8 +54,12 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 38px;
   line-height: 1.24;
+
+  @include mq(large) {
+    font-size: 48px;
+  }
 }
 
 p {

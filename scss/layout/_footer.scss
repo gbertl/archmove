@@ -1,10 +1,39 @@
 .footer {
-  padding: 83px 0;
+  padding: 43px 0;
   border-top: 1px solid #f0f0f0;
+
+  @include mq(small) {
+    padding: 83px 0;
+  }
+
+  &__container {
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+
+    @include mq(small) {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    margin-top: 15px;
+
+    @include mq(small) {
+      margin-top: 0;
+    }
+  }
 }
 
 .footer-nav {
-  gap: 48px;
+  gap: 15px;
+
+  @include mq(small) {
+    gap: 48px;
+    flex-direction: row;
+  }
 
   &__link {
     font-weight: 600;

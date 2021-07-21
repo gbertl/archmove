@@ -74,18 +74,18 @@ carousel({
   interval: 5000,
 });
 
-document.querySelector(".navbarSearch__btn").addEventListener("click", () => {
+document.querySelector(".navbar-search__btn").addEventListener("click", () => {
   document
-    .querySelector(".navbarSearch__inputWrapper")
-    .classList.toggle("navbarSearch__inputWrapper--open");
-  document.querySelector(".navbarSearch__input").focus();
+    .querySelector(".navbar-search__input-wrapper")
+    .classList.toggle("navbar-search__input-wrapper--open");
+  document.querySelector(".navbar-search__input").focus();
 });
 
 document.body.addEventListener("click", (e) => {
-  if (!e.target.closest(".navbarSearch")) {
+  if (!e.target.closest(".navbar-search")) {
     document
-      .querySelector(".navbarSearch__inputWrapper")
-      .classList.remove("navbarSearch__inputWrapper--open");
+      .querySelector(".navbar-search__input-wrapper")
+      .classList.remove("navbar-search__input-wrapper--open");
   }
 });
 

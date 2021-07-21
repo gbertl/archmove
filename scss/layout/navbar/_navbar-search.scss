@@ -1,4 +1,4 @@
-.navbarSearch {
+.navbar-search {
   gap: 15px;
   justify-content: center;
 
@@ -12,7 +12,7 @@
     border-radius: none;
   }
 
-  &__inputWrapper {
+  &__input-wrapper {
     position: relative;
     display: block;
     width: 100%;
@@ -50,15 +50,15 @@
       display: block;
     }
 
-    &__inputWrapper {
+    &__input-wrapper {
       display: none;
     }
 
-    &__inputWrapper--open {
+    &__input-wrapper--open {
       display: block;
     }
 
-    &__inputWrapper--open ~ &__btn {
+    &__input-wrapper--open ~ &__btn {
       background: rgba(#000, 0.03);
       color: #fd665e;
     }

@@ -1,10 +1,21 @@
 .partners {
   &__heading {
-    margin-bottom: 56px;
+    margin-bottom: 40px;
+
+    @include mq(large) {
+      margin-bottom: 56px;
+    }
   }
 
   &__brands {
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    @include mq(large) {
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
   }
 }

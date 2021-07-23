@@ -3,7 +3,6 @@
   justify-content: center;
 
   &__btn {
-    // display: inline-block;
     display: none;
     font-size: 18px;
     line-height: 0;
@@ -47,7 +46,7 @@
 
   @include mq(large) {
     &__btn {
-      display: block;
+      display: inline-block;
     }
 
     &__input-wrapper {

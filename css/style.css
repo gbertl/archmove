@@ -189,9 +189,6 @@ input {
   padding: 33px 30px;
   position: relative;
   justify-content: space-between; }
-  @media (min-width: 640px) {
-    .navbar {
-      flex-direction: column; } }
   @media (min-width: 1024px) {
     .navbar {
       padding: 33px 50px;
@@ -248,25 +245,29 @@ input {
     .nav__signin:hover {
       color: var(--gray-color);
       background-color: #e2e2e2; }
-  @media (min-width: 640px) {
+  @media (min-width: 1024px) {
     .nav {
       display: flex;
       background: none;
       position: relative;
       overflow: visible;
       max-height: none;
-      transition: none; }
+      transition: none;
+      padding: 0;
+      flex-direction: row; }
       .nav__signup:hover {
         background-color: var(--primary-color); }
       .nav__signup:hover::before {
         transform: scaleX(1); }
       .nav__links-wrapper {
-        gap: 15px;
-        text-align: center; }
+        gap: 50px; }
       .nav__links-wrapper, .nav__buttons {
         flex-direction: row;
         justify-content: center;
         padding: 0; }
+      .nav__links-wrapper li,
+      .nav__buttons li {
+        width: auto; }
       .nav__link {
         position: relative;
         padding: 0;
@@ -283,16 +284,7 @@ input {
           background-color: var(--primary-color);
           transition: 0.4s; }
         .nav__link:hover::before {
-          width: 100%; } }
-  @media (min-width: 1024px) {
-    .nav {
-      padding: 0;
-      flex-direction: row; }
-      .nav__links-wrapper {
-        gap: 50px; }
-      .nav__links-wrapper li,
-      .nav__buttons li {
-        width: auto; }
+          width: 100%; }
       .nav__buttons {
         gap: 45px; } }
 
@@ -331,7 +323,7 @@ input {
     width: 100%; }
   @media (min-width: 1024px) {
     .navbar-search__btn {
-      display: block; }
+      display: inline-block; }
     .navbar-search__input-wrapper {
       display: none; }
     .navbar-search__input-wrapper--open {
@@ -350,7 +342,7 @@ input {
     background-color: var(--gray-color);
     height: 3px;
     width: 100%; }
-  @media (min-width: 640px) {
+  @media (min-width: 1024px) {
     .navbar-toggler {
       display: none; } }
 

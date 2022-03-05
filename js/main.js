@@ -1,4 +1,11 @@
-const slider = ({ trackEl, containerEl, nextBtnEl, prevBtnEl, slidesEl }) => {
+const slider = ({
+  trackEl,
+  containerEl,
+  nextBtnEl,
+  prevBtnEl,
+  slidesEl,
+  slidesPerView = false,
+}) => {
   const track = document.querySelector(trackEl);
   const container = document.querySelector(containerEl);
   const nextBtn = document.querySelector(nextBtnEl);
@@ -70,10 +77,20 @@ const slider = ({ trackEl, containerEl, nextBtnEl, prevBtnEl, slidesEl }) => {
   const gestureEnd = () => {
     drag = false;
 
-    const moved = getTransformed() - transformed;
+    const lastTransformed = getTransformed();
+    const moved = lastTransformed - transformed;
 
-    if (moved < -100 && counter < slides.length - 1) counter += 1;
-    if (moved > 100 && counter > 0) counter -= 1;
+    if (slidesPerView) {
+      slides.forEach((s, idx) => {
+        const slidePos = counter === 0 ? 100 : size * idx - 200;
+        if (Math.abs(lastTransformed) > slidePos) {
+          counter = idx;
+        }
+      });
+    } else {
+      if (moved < -100 && counter < slides.length - 1) counter += 1;
+      if (moved > 100 && counter > 0) counter -= 1;
+    }
 
     apply();
   };
@@ -93,6 +110,7 @@ window.addEventListener('load', () => {
     nextBtnEl: '.slider__next-btn',
     prevBtnEl: '.slider__prev-btn',
     slidesEl: '.slider__item',
+    slidesPerView: true,
   });
 
   slider({

@@ -14,6 +14,8 @@ const slider = ({
   const gap = window.getComputedStyle(track).getPropertyValue('gap');
   const slides = document.querySelectorAll(slidesEl);
   const size = slides[0].offsetWidth + parseInt(gap);
+  const edgePos = track.scrollWidth - container.clientWidth;
+  const lastCounter = slides.length - 1;
 
   // gesture states
   let initPos = 0;
@@ -24,17 +26,36 @@ const slider = ({
     .querySelectorAll('img')
     .forEach((i) => i.addEventListener('dragstart', (e) => e.preventDefault()));
 
+  const calculatePosX = () => size * counter;
+
   const apply = () => {
     track.style.transition = '.3s';
-    track.style.transform = `translateX(-${size * counter}px)`;
+
+    let posX = calculatePosX();
+
+    if (posX > edgePos) {
+      posX = edgePos;
+      counter = lastCounter;
+    }
+
+    track.style.transform = `translateX(-${posX}px)`;
   };
 
   const increaseCounter = () => {
-    counter = counter >= slides.length - 1 ? 0 : counter + 1;
+    counter = counter >= lastCounter ? 0 : counter + 1;
   };
 
   const decreaseCounter = () => {
-    counter = counter <= 0 ? slides.length - 1 : counter - 1;
+    console.log(counter, '<<<before');
+    if (counter <= 0) {
+      counter = lastCounter;
+    } else {
+      while (calculatePosX() > edgePos) {
+        counter--;
+      }
+    }
+
+    console.log(counter, '<<<after');
   };
 
   const slideNext = () => {
@@ -63,12 +84,15 @@ const slider = ({
     if (!drag) return;
 
     const currentPos = e.pageX;
-    const lastCounter = slides.length - 1;
     const endPos = size * lastCounter;
     let posX = transformed + currentPos - initPos;
 
     if (Math.abs(posX) > endPos) posX = -endPos;
     else if (posX > 0) posX = 0;
+
+    if (Math.abs(posX) > edgePos) {
+      posX = -edgePos;
+    }
 
     track.style.transition = 'none';
     track.style.transform = `translateX(${posX}px)`;
@@ -80,27 +104,33 @@ const slider = ({
     const lastTransformed = getTransformed();
     const moved = lastTransformed - transformed;
 
+    let applyIt = true;
     if (slidesPerView) {
-      slides.forEach((s, idx) => {
-        const slidePos = counter === 0 ? 100 : size * idx - 200;
-        if (Math.abs(lastTransformed) > slidePos) {
-          counter = idx;
-        }
-      });
+      if (Math.abs(lastTransformed) === edgePos) {
+        counter = lastCounter;
+        applyIt = false;
+      } else {
+        slides.forEach((s, idx) => {
+          const slidePos = counter === 0 ? 100 : size * idx - 200;
+          if (Math.abs(lastTransformed) > slidePos) {
+            counter = idx;
+          }
+        });
+      }
     } else {
-      if (moved < -100 && counter < slides.length - 1) counter += 1;
+      if (moved < -100 && counter < lastCounter) counter += 1;
       if (moved > 100 && counter > 0) counter -= 1;
     }
 
-    apply();
+    if (applyIt) apply();
   };
 
   nextBtn.addEventListener('click', slideNext);
   prevBtn.addEventListener('click', slidePrev);
 
-  track.addEventListener('mousedown', gestureStart);
-  track.addEventListener('mousemove', gestureMove);
-  track.addEventListener('mouseup', gestureEnd);
+  // track.addEventListener('mousedown', gestureStart);
+  // track.addEventListener('mousemove', gestureMove);
+  // track.addEventListener('mouseup', gestureEnd);
 };
 
 window.addEventListener('load', () => {

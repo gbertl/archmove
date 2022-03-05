@@ -88,6 +88,14 @@ const slider = ({ trackEl, containerEl, nextBtnEl, prevBtnEl, slidesEl }) => {
 
 window.addEventListener('load', () => {
   slider({
+    trackEl: '.slider__container',
+    containerEl: '.slider',
+    nextBtnEl: '.slider__next-btn',
+    prevBtnEl: '.slider__prev-btn',
+    slidesEl: '.slider__item',
+  });
+
+  slider({
     trackEl: '.testimonials__carousel-container',
     containerEl: '.testimonials__container',
     nextBtnEl: '.testimonials__next-btn',

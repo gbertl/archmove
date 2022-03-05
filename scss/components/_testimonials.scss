@@ -19,6 +19,7 @@
     width: 100%;
     flex-shrink: 0;
     padding-bottom: 14px;
+    user-select: none;
 
     @include mq(large) {
       gap: 52px;

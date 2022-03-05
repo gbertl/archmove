@@ -1,11 +1,11 @@
-const slider = () => {
-  const track = document.querySelector('.testimonials__carousel-container');
-  const container = document.querySelector('.testimonials__container');
-  const nextBtn = document.querySelector('.testimonials__next-btn');
-  const prevBtn = document.querySelector('.testimonials__prev-btn');
+const slider = ({ trackEl, containerEl, nextBtnEl, prevBtnEl, slidesEl }) => {
+  const track = document.querySelector(trackEl);
+  const container = document.querySelector(containerEl);
+  const nextBtn = document.querySelector(nextBtnEl);
+  const prevBtn = document.querySelector(prevBtnEl);
   let counter = 0;
   const gap = window.getComputedStyle(track).getPropertyValue('gap');
-  const slides = document.querySelectorAll('.testimonials__text');
+  const slides = document.querySelectorAll(slidesEl);
   const size = slides[0].offsetWidth + parseInt(gap);
 
   // gesture states
@@ -83,7 +83,13 @@ const slider = () => {
 };
 
 window.addEventListener('load', () => {
-  slider();
+  slider({
+    trackEl: '.testimonials__carousel-container',
+    containerEl: '.testimonials__container',
+    nextBtnEl: '.testimonials__next-btn',
+    prevBtnEl: '.testimonials__prev-btn',
+    slidesEl: '.testimonials__text',
+  });
 });
 
 document.querySelector('.navbar-search__btn').addEventListener('click', () => {

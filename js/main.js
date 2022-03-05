@@ -13,6 +13,10 @@ const slider = ({ trackEl, containerEl, nextBtnEl, prevBtnEl, slidesEl }) => {
   let drag = false;
   let transformed = 0;
 
+  track
+    .querySelectorAll('img')
+    .forEach((i) => i.addEventListener('dragstart', (e) => e.preventDefault()));
+
   const apply = () => {
     track.style.transition = '.3s';
     track.style.transform = `translateX(-${size * counter}px)`;

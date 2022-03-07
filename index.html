@@ -8,7 +8,10 @@
       href="https://fonts.cdnfonts.com/css/new-york-extra-large?styles=70611"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Arch Move</title>
@@ -106,12 +109,28 @@
           </div>
         </div>
 
-        <div class="slider">
-          <div class="slider__container flex">
-            <img class="slider__item" src="img/rooms/img-01.jpg" alt="" />
-            <img class="slider__item" src="img/rooms/img-02.jpg" alt="" />
-            <img class="slider__item" src="img/rooms/img-03.jpg" alt="" />
-            <img class="slider__item" src="img/rooms/img-04.jpg" alt="" />
+        <div class="slider swiper">
+          <div class="slider__container flex swiper-wrapper">
+            <img
+              class="slider__item swiper-slide"
+              src="img/rooms/img-01.jpg"
+              alt=""
+            />
+            <img
+              class="slider__item swiper-slide"
+              src="img/rooms/img-02.jpg"
+              alt=""
+            />
+            <img
+              class="slider__item swiper-slide"
+              src="img/rooms/img-03.jpg"
+              alt=""
+            />
+            <img
+              class="slider__item swiper-slide"
+              src="img/rooms/img-04.jpg"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -296,6 +315,8 @@
     </footer>
 
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="js/main.js"></script>
   </body>

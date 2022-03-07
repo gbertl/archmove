@@ -7,6 +7,19 @@ window.addEventListener('load', () => {
       prevEl: '.slider__prev-btn',
     },
     resistanceRatio: 0,
+    grabCursor: true,
+  });
+
+  const swiper2 = new Swiper('.testimonials__carousel', {
+    spaceBetween: 100,
+    resistanceRatio: 0,
+    navigation: {
+      nextEl: '.testimonials__next-btn',
+      prevEl: '.testimonials__prev-btn',
+    },
+    loop: true,
+    autoplay: true,
+    grabCursor: true,
   });
 });
 

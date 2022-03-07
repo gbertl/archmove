@@ -603,10 +603,11 @@ input {
 .testimonials__heading {
   margin-bottom: 40px;
 }
-.testimonials__carousel-container {
-  gap: 100px;
+.testimonials__carousel {
   max-width: 874px;
   margin-left: auto;
+  margin-right: 0;
+  overflow: visible;
 }
 .testimonials__text {
   gap: 32px;
@@ -645,6 +646,7 @@ input {
 .testimonials__buttons {
   width: fit-content;
   margin-left: auto;
+  z-index: 2;
 }
 @media (min-width: 768px) {
   .testimonials__buttons {

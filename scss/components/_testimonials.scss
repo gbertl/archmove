@@ -8,10 +8,11 @@
     margin-bottom: 40px;
   }
 
-  &__carousel-container {
-    gap: 100px;
+  &__carousel {
     max-width: 874px;
     margin-left: auto;
+    margin-right: 0;
+    overflow: visible;
   }
 
   &__text {
@@ -51,6 +52,7 @@
   &__buttons {
     width: fit-content;
     margin-left: auto;
+    z-index: 2;
 
     @include mq(medium) {
       position: absolute;

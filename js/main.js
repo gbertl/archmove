@@ -18,7 +18,9 @@ window.addEventListener('load', () => {
       prevEl: '.testimonials__prev-btn',
     },
     loop: true,
-    autoplay: true,
+    autoplay: {
+      disableOnInteraction: false,
+    },
     grabCursor: true,
   });
 });

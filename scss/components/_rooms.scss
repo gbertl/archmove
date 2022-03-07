@@ -36,6 +36,10 @@
     user-select: none;
   }
 
+  &__item {
+    width: fit-content;
+  }
+
   &__prev-btn {
     margin-right: 8px;
   }

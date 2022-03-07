@@ -543,6 +543,9 @@ input {
   gap: 40px;
   user-select: none;
 }
+.slider__item {
+  width: fit-content;
+}
 .slider__prev-btn {
   margin-right: 8px;
 }

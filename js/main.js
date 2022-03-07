@@ -14,6 +14,8 @@ const slider = ({
   const gap = window.getComputedStyle(track).getPropertyValue('gap');
   const slides = document.querySelectorAll(slidesEl);
   const size = slides[0].offsetWidth + parseInt(gap);
+  const edgePos = track.scrollWidth - container.clientWidth;
+  const lastCounter = slides.length - 1;
 
   // gesture states
   let initPos = 0;
@@ -24,17 +26,35 @@ const slider = ({
     .querySelectorAll('img')
     .forEach((i) => i.addEventListener('dragstart', (e) => e.preventDefault()));
 
+  const calculatePosX = () => size * counter;
+  const passEdge = (posX) => Math.abs(posX) > edgePos;
+
   const apply = () => {
     track.style.transition = '.3s';
-    track.style.transform = `translateX(-${size * counter}px)`;
+    track.style.transform = `translateX(-${
+      passEdge(calculatePosX()) ? edgePos : calculatePosX()
+    }px)`;
   };
 
   const increaseCounter = () => {
-    counter = counter >= slides.length - 1 ? 0 : counter + 1;
+    if (counter >= lastCounter) {
+      counter = 0;
+    } else {
+      counter += 1;
+      if (passEdge(calculatePosX())) {
+        counter = lastCounter;
+      }
+    }
   };
 
   const decreaseCounter = () => {
-    counter = counter <= 0 ? slides.length - 1 : counter - 1;
+    if (counter <= 0) {
+      counter = lastCounter;
+    } else {
+      do {
+        counter -= 1;
+      } while (passEdge(calculatePosX()));
+    }
   };
 
   const slideNext = () => {
@@ -55,23 +75,25 @@ const slider = ({
   const gestureStart = (e) => {
     drag = true;
     initPos = e.pageX;
-
     transformed = getTransformed();
   };
 
   const gestureMove = (e) => {
     if (!drag) return;
 
-    const currentPos = e.pageX;
-    const lastCounter = slides.length - 1;
-    const endPos = size * lastCounter;
-    let posX = transformed + currentPos - initPos;
+    let currentPos = transformed + e.pageX - initPos;
 
-    if (Math.abs(posX) > endPos) posX = -endPos;
-    else if (posX > 0) posX = 0;
+    if (currentPos > 0) currentPos = 0;
+
+    if (slidesPerView) {
+      if (passEdge(currentPos)) currentPos = -edgePos;
+    } else {
+      const lastSlidePos = -Math.abs(size * lastCounter);
+      if (currentPos < lastSlidePos) currentPos = lastSlidePos;
+    }
 
     track.style.transition = 'none';
-    track.style.transform = `translateX(${posX}px)`;
+    track.style.transform = `translateX(${currentPos}px)`;
   };
 
   const gestureEnd = () => {
@@ -80,16 +102,13 @@ const slider = ({
     const lastTransformed = getTransformed();
     const moved = lastTransformed - transformed;
 
-    if (slidesPerView) {
-      slides.forEach((s, idx) => {
-        const slidePos = counter === 0 ? 100 : size * idx - 200;
-        if (Math.abs(lastTransformed) > slidePos) {
-          counter = idx;
-        }
-      });
+    if (Math.abs(lastTransformed) === edgePos) {
+      counter = lastCounter;
     } else {
-      if (moved < -100 && counter < slides.length - 1) counter += 1;
-      if (moved > 100 && counter > 0) counter -= 1;
+      counter = [...slides].findIndex((el, idx) => {
+        const nextSlidePos = size * (idx + 1) - 200;
+        return Math.abs(lastTransformed) < nextSlidePos;
+      });
     }
 
     apply();
@@ -112,14 +131,14 @@ window.addEventListener('load', () => {
     slidesEl: '.slider__item',
     slidesPerView: true,
   });
-
-  slider({
-    trackEl: '.testimonials__carousel-container',
-    containerEl: '.testimonials__container',
-    nextBtnEl: '.testimonials__next-btn',
-    prevBtnEl: '.testimonials__prev-btn',
-    slidesEl: '.testimonials__text',
-  });
+  //
+  // slider({
+  //   trackEl: '.testimonials__carousel-container',
+  //   containerEl: '.testimonials__container',
+  //   nextBtnEl: '.testimonials__next-btn',
+  //   prevBtnEl: '.testimonials__prev-btn',
+  //   slidesEl: '.testimonials__text',
+  // });
 });
 
 document.querySelector('.navbar-search__btn').addEventListener('click', () => {
